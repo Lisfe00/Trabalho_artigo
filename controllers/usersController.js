@@ -57,9 +57,22 @@ function login(req, res) {
     }
 }
 
+//puxa todos os usuários
+function logout(req, res) {
+    req.session.destroy((err) => {
+        if (err) {
+          console.log(err);
+          res.send("Erro ao fazer logout");
+        } else {
+          res.redirect("/login");
+        }
+      });
+}
+
 // addd todas as funções aqui
 module.exports = {
     index,
     getAll,
-    login
+    login,
+    logout
 }
