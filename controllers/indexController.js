@@ -7,7 +7,14 @@ const index = (req, res) => {
     res.sendFile(path.join(__dirname, '../views', 'index.html'));
 }
 
+
+function login(req, res) {
+    res.sendFile(path.join(__dirname, '../views', 'login.html'));
+}
+
+
 // addd todas as funções aqui
 module.exports = {
-    index
+    index,
+    login
 }
