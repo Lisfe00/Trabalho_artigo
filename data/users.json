@@ -1,21 +1,19 @@
-[  
+[
     {
-    "author_id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
-    "author_name": "Andre Faria Ruaro",
-    "author_email": "andre.ruaro@unesc.net",
-    "author_user": "andre.ruaro",
-    "author_pwd": "123456",
-    "author_level": "admin",
-    "author_status": "on"
+        "author_id":"7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
+        "author_name":"Luis Felipe Ceron Bellé",
+        "author_email":"andre.ruaro@unesc.net",
+        "author_user":"Luis.felipe",
+        "author_pwd":"123456",
+        "author_level":"admin",
+        "author_status":"on"
     },
-    {
-    "author_id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
-    "author_name": "Luis Felipe Ceron Bellé",
-    "author_email": "andre.ruaro@unesc.net",
-    "author_user": "Luis.felipe",
-    "author_pwd": "123456",
-    "author_level": "admin",
-    "author_status": "on"
-    }
-    
+        {
+            "author_id":"1f0c4a74-d188-4b51-89d1-cbd7b12cb845",
+            "author_name":"Esthefani",
+            "author_email":"Esthefani@hotmail.com",
+            "author_user":"esthefani",
+            "author_pwd":"123456",
+            "author_level":"admin",
+            "author_status":"on"}
 ]

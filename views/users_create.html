@@ -7,5 +7,25 @@
 </head>
 <body>
     <h1>create users</h1>
+    <form action="/users/create">
+        <label>nome</label>
+        <input type="text" name="name">
+        <label>email</label>
+        <input type="email" name="email">
+        <label>usuário</label>
+        <input type="text" name="user">
+        <label>senha</label>
+        <input type="text" name="password">
+        <label>Tipo de acesso</label>
+        <select name="acess">
+            <option value="admin">Admin</option>
+            <option value="autor">autor</option>
+        </select>
+        <label>Status</label>
+        <input type="checkbox" name="status" value="on" checked>
+        <button>ENVIAR</button>
+    </form>
+
+    <a href="/users/home">VOLTAR</a>
 </body>
 </html>

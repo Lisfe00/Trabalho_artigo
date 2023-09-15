@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 //função puxa a home para admins e autores
 function index(req, res) {
@@ -30,17 +31,16 @@ function login(req, res) {
         let userFound = false;
 
         users.forEach((element) => {
-            console.log(element);
             if (
                 element.author_user === user &&
-                element.author_pwd === password
+                element.author_pwd === password &&
+                element.author_status === 'on'
             ) {
                 userFound = true;
                 //guarda user para sessao
                 req.session.author_user = element.author_user;
                 req.session.author_id = element.author_id;
                 req.session.author_level = element.author_level;
-                console.log("ID user: " + req.session.author_id);
             }   
         });
 
@@ -69,10 +69,53 @@ function logout(req, res) {
       });
 }
 
+function showCreate(req, res) {
+    res.sendFile(path.join(__dirname, '../views', 'users_create.html'));
+}
+
+async function create(req, res) {
+    let id = uuidv4();
+    let name = req.query.name;
+    let email = req.query.email;
+    let user = req.query.user;
+    let password = req.query.password;
+    let acess = req.query.acess;
+    let status = req.query.status;
+
+    if(status){
+        status = "on"
+    }else{
+        status = "off"
+    }
+
+    data = {
+        author_id: id,
+        author_name: name,
+        author_email: email,
+        author_user: user,
+        author_pwd: password,
+        author_level: acess,
+        author_status: status,
+    }
+
+    let json = JSON.stringify(data);
+
+    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
+    let jsonDatas = JSON.parse(oldjson);
+
+    jsonDatas.novo = data;
+
+
+        fs.writeFileSync(path.join(__dirname, '../data', 'users.json'), JSON.stringify(jsonDatas));
+
+    }
+
 // addd todas as funções aqui
 module.exports = {
     index,
     getAll,
     login,
-    logout
+    logout,
+    showCreate,
+    create
 }

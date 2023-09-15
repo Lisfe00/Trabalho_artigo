@@ -9,7 +9,16 @@ function isAuthenticated(req, res, next) {
     }
   }
   
+function isadmin(req, res, next) {
+    //verifique se o usuario está autenticado
+    if (req.session.author_level === "admin") {
+      next();
+    } else {
+      res.redirect("/users/home");
+    }
+  }
     // addd todas as funções aqui
 module.exports = {
-    isAuthenticated
+    isAuthenticated,
+    isadmin
 }
