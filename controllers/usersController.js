@@ -88,7 +88,10 @@ async function create(req, res) {
         status = "off"
     }
 
-    data = {
+    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
+    let jsonDatas = JSON.parse(oldjson);
+
+    jsonDatas.push({
         author_id: id,
         author_name: name,
         author_email: email,
@@ -96,14 +99,7 @@ async function create(req, res) {
         author_pwd: password,
         author_level: acess,
         author_status: status,
-    }
-
-    let json = JSON.stringify(data);
-
-    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
-    let jsonDatas = JSON.parse(oldjson);
-
-    jsonDatas.novo = data;
+    });
 
 
         fs.writeFileSync(path.join(__dirname, '../data', 'users.json'), JSON.stringify(jsonDatas));
