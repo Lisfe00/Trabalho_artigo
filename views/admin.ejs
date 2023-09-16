@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tela admin</h1>
+    <a href="/users/logout">logout</a>
+    <a href="/users/show/create">criar user</a>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <% if (authUser == "admin") { %>
+    <table>
+        <thead>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Usuário</td>
+            <td>Permimssão</td>
+            <td>Ativo</td>
+        </thead>
+        <tbody>
+            <% if (Array.isArray(datas)) { %>
+                <% datas.forEach(function(data) { %>
+                    <tr>
+                        <td><%= data.author_name %></td>
+                        <td><%= data.author_email %></td>
+                        <td><%= data.author_user %></td>
+                        <td><%= data.author_level %></td>
+                        <td><%= data.author_status %></td>
+                        <td><a href="/users/show/update/<%= data.author_id%>">Editar</a></td>
+                        <td><a href="/users/delete/<%= data.author_id%>">Deletar</a></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td>Data is not an array.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <% } %>
+
+</body>
+</html>

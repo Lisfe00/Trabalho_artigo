@@ -4,12 +4,13 @@ const fs = require("fs");
 const path = require('path');
 
 const index = (req, res) => {
-    res.sendFile(path.join(__dirname, '../views', 'index.html'));
+    res.render('../views/index');
+
 }
 
 
 function login(req, res) {
-    res.sendFile(path.join(__dirname, '../views', 'login.html'));
+    res.render('../views/login');
 }
 
 

@@ -4,24 +4,20 @@ const { v4: uuidv4 } = require('uuid');
 
 //função puxa a home para admins e autores
 function index(req, res) {
-    res.sendFile(path.join(__dirname, '../views', 'admin.html'));
-}
-
-//puxa todos os usuários
-function getAll(req, res) {
     try{
-        let data = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
-        res.status(200).json(data);
+        let json = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
+        let datas = JSON.parse(json);
+        res.render('../views/admin', { datas: datas, authUser: req.session.author_level });
     } catch (error) {
         console.error('Erro ao ler o arquivo:', error);
     }
+
 }
 
 //função de login
 function login(req, res) {
     let user = req.query.user;
     let password = req.query.password;
-    console.log(user, password);
 
     try{
         let data = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
@@ -70,10 +66,10 @@ function logout(req, res) {
 }
 
 function showCreate(req, res) {
-    res.sendFile(path.join(__dirname, '../views', 'users_create.html'));
+    res.render('../views/users_create', { errormessage: false});
 }
 
-async function create(req, res) {
+function create(req, res) {
     let id = uuidv4();
     let name = req.query.name;
     let email = req.query.email;
@@ -91,27 +87,111 @@ async function create(req, res) {
     let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
     let jsonDatas = JSON.parse(oldjson);
 
-    jsonDatas.push({
-        author_id: id,
-        author_name: name,
-        author_email: email,
-        author_user: user,
-        author_pwd: password,
-        author_level: acess,
-        author_status: status,
+    let userRepet = false;
+
+    jsonDatas.forEach((element) => {
+        if(element.author_user === user){
+            userRepet = true;
+        }
     });
 
+    if(userRepet){
+        let errormessage = "Usuário já existe"
+        res.render('../views/users_create', { errormessage: errormessage });
+    }else{
+
+        jsonDatas.push({
+            author_id: id,
+            author_name: name,
+            author_email: email,
+            author_user: user,
+            author_pwd: password,
+            author_level: acess,
+            author_status: status,
+        });
 
         fs.writeFileSync(path.join(__dirname, '../data', 'users.json'), JSON.stringify(jsonDatas));
 
+        res.render('../views/admin');
+
     }
+}
+
+function showUpdate(req, res) {
+
+    const userId = req.params.id;
+
+    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
+    let jsonDatas = JSON.parse(oldjson);
+
+    let user;
+
+    jsonDatas.forEach((element) => {
+        if(element.author_id === userId){
+            user = element;
+        }
+    });
+
+    res.render('../views/users_edit', { user: user });
+}
+
+function update(req, res){
+    let id = req.query.id;
+    let name = req.query.name;
+    let email = req.query.email;
+    let user = req.query.user;
+    let password = req.query.password;
+    let acess = req.query.acess;
+    let status = req.query.status;
+
+    if(status){
+        status = "on"
+    }else{
+        status = "off"
+    }
+
+    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
+    let jsonDatas = JSON.parse(oldjson)
+
+
+    jsonDatas.forEach((element) => {
+        if(element.author_id === id){
+            element.author_name = name;
+            element.author_email = email;
+            element.author_user = user;
+            element.author_pwd = password;
+            element.author_level = acess;
+            element.author_status = status;
+        }
+    });
+
+        fs.writeFileSync(path.join(__dirname, '../data', 'users.json'), JSON.stringify(jsonDatas));
+
+        res.redirect("/users/home");
+}
+
+function deleteUser(req, res){
+
+    const userId = req.params.id;
+
+    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
+    let jsonDatas = JSON.parse(oldjson);
+
+    jsonDatas = jsonDatas.filter((element) => element.author_id !== userId);
+    
+    fs.writeFileSync(path.join(__dirname, '../data', 'users.json'), JSON.stringify(jsonDatas));
+
+    res.redirect("/users/home");
+}
 
 // addd todas as funções aqui
 module.exports = {
     index,
-    getAll,
     login,
     logout,
     showCreate,
-    create
+    create,
+    showUpdate,
+    update,
+    deleteUser
 }

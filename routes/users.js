@@ -9,10 +9,14 @@ router.get('/logout', usersController.logout);
 
 router.get('/home', authenticator.isAuthenticated, usersController.index);
 
-router.get('/get_all', authenticator.isAuthenticated, usersController.getAll);
-
 router.get('/show/create', authenticator.isAuthenticated, authenticator.isadmin, usersController.showCreate);
 
-router.get('/create', authenticator.isAuthenticated, usersController.create);
+router.get('/create', authenticator.isAuthenticated, authenticator.isadmin, usersController.create);
+
+router.get('/show/update/:id', authenticator.isAuthenticated, authenticator.isadmin, usersController.showUpdate);
+
+router.get('/update', authenticator.isAuthenticated, authenticator.isadmin, usersController.update);
+
+router.get('/delete/:id', authenticator.isAuthenticated, authenticator.isadmin, usersController.deleteUser);
 
 module.exports = router;

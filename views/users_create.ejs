@@ -27,5 +27,10 @@
     </form>
 
     <a href="/users/home">VOLTAR</a>
+
+    <% if (errormessage) { %>
+        <div><%= errormessage %></div>
+    <% }%>
+
 </body>
 </html>

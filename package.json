@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
-  "nodemonConfig":{
-    "ignore": ["/data/*.json"]
+  "nodemonConfig": {
+    "ignore": [
+      "/data/*.json"
+    ]
   },
   "scripts": {
     "start": "nodemon app.js",
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "fs": "^0.0.1-security",
