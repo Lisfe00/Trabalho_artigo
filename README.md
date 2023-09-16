@@ -2,7 +2,7 @@
 
 * Feito com Node.js e Express.js
 * Encode: UTF-8
-* http://172.17.0.1:8069
+* http://localhost:8069
 
 ## NPM
 
