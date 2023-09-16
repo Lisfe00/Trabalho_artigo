@@ -9,8 +9,51 @@
     <h1>Tela admin</h1>
     <a href="/users/logout">logout</a>
     <a href="/users/show/create">criar user</a>
+    <a href="/articles/show/create">criar artigo</a>
 
     <br/>
+    <br/>
+    <br/>
+
+    <table>
+        <thead>
+            <td>Titulo</td>
+            <td>corpo</td>
+            <td>subtitulo</td>
+            <td>palavras chave</td>
+            <td>Curtidas</td>
+            <td>Publicar</td>
+            <td>Sugerido</td>
+            <td>Destaque</td>
+            <td>E-mmal do autor</td>
+            <td>Data publicação</td>
+        </thead>
+        <tbody>
+            <% if (Array.isArray(datasArticles)) { %>
+                <% datasArticles.forEach(function(dataArticle) { %>
+                    <tr>
+                        <td><%= dataArticle.kb_title %></td>
+                        <td><%= dataArticle.kb_body %></td>
+                        <td><%= dataArticle.kb_permalink %></td>
+                        <td><%= dataArticle.kb_keywords %></td>
+                        <td><%= dataArticle.kb_liked_count %></td>
+                        <td><%= dataArticle.kb_published %></td>
+                        <td><%= dataArticle.kb_suggestion %></td>
+                        <td><%= dataArticle.kb_featured %></td>
+                        <td><%= dataArticle.kb_author_email %></td>
+                        <td><%= dataArticle.kb_published_date %></td>
+                        <td><a href="/articles/show/update/<%= dataArticle.kb_id%>">Editar</a></td>
+                        <td><a href="/articles/delete/<%= dataArticle.kb_id%>">Deletar</a></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td>Data is not an array.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    
     <br/>
     <br/>
 

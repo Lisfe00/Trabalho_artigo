@@ -7,7 +7,11 @@ function index(req, res) {
     try{
         let json = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
         let datas = JSON.parse(json);
-        res.render('../views/admin', { datas: datas, authUser: req.session.author_level });
+
+        let jsonArticles = fs.readFileSync(path.join(__dirname, '../data', 'articles.json'), 'utf-8');
+        let datasArticles = JSON.parse(jsonArticles);
+
+        res.render('../views/admin', { datas: datas, datasArticles: datasArticles, authUser: req.session.author_level });
     } catch (error) {
         console.error('Erro ao ler o arquivo:', error);
     }
@@ -37,6 +41,7 @@ function login(req, res) {
                 req.session.author_user = element.author_user;
                 req.session.author_id = element.author_id;
                 req.session.author_level = element.author_level;
+                req.session.author_email = element.author_email;
             }   
         });
 
@@ -76,13 +81,7 @@ function create(req, res) {
     let user = req.query.user;
     let password = req.query.password;
     let acess = req.query.acess;
-    let status = req.query.status;
-
-    if(status){
-        status = "on"
-    }else{
-        status = "off"
-    }
+    let status = (req.query.status)? "on" : "off";
 
     let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
     let jsonDatas = JSON.parse(oldjson);
@@ -112,7 +111,7 @@ function create(req, res) {
 
         fs.writeFileSync(path.join(__dirname, '../data', 'users.json'), JSON.stringify(jsonDatas));
 
-        res.render('../views/admin');
+        res.redirect("/users/home");
 
     }
 }
@@ -142,13 +141,7 @@ function update(req, res){
     let user = req.query.user;
     let password = req.query.password;
     let acess = req.query.acess;
-    let status = req.query.status;
-
-    if(status){
-        status = "on"
-    }else{
-        status = "off"
-    }
+    let status = (req.query.status)? "on" : "off";
 
     let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
     let jsonDatas = JSON.parse(oldjson)
@@ -178,7 +171,7 @@ function deleteUser(req, res){
     let jsonDatas = JSON.parse(oldjson);
 
     jsonDatas = jsonDatas.filter((element) => element.author_id !== userId);
-    
+
     fs.writeFileSync(path.join(__dirname, '../data', 'users.json'), JSON.stringify(jsonDatas));
 
     res.redirect("/users/home");

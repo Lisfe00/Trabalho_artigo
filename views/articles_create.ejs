@@ -6,6 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>create articles</h1>
+    <form action="/articles/create">
+        <label>tiulo</label>
+        <input type="text" name="title">
+        <label>corpo</label>
+        <input type="text" name="body">
+        <label>subtitulo</label>
+        <input type="text" name="permalink">
+        <label>palavras chave</label>
+        <input type="text" name="keywords">
+        <label>Publicar</label>
+        <input type="checkbox" name="published" value="on" checked>
+        <label>Sugerido</label>
+        <input type="checkbox" name="suggestion" value="on" checked>
+        <label>Destaque</label>
+        <input type="checkbox" name="featured" value="on" checked>
+        <button>ENVIAR</button>
+    </form>
+
+    <a href="/users/home">VOLTAR</a>
+
 </body>
 </html>

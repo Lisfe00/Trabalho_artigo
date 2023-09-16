@@ -1,14 +1,1 @@
-[ {
-    "kb_id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
-    "kb_title": "Título 01",
-    "kb_body": "<p>Este artigo é um teste para uma base de conhecimento.</p>",
-    "kb_permalink": "titulo01",
-    "kb_keywords": "teste",
-    "kb_liked_count": "10",
-    "kb_published": "on",
-    "kb_suggestion": "on",
-    "kb_featured": "on",
-    "kb_author_email": "andre.ruaro@unesc.net",
-    "kb_published_date": "2023-08-30"
-    }
-]
+[{"kb_id":"421c30db-b085-44a0-b9d5-c2a24b5f738c","kb_title":"o fodastico foda","kb_body":"lorem loremloremloremloremlo","kb_permalink":"o foda","kb_keywords":"foda","kb_liked_count":0,"kb_published":"on","kb_suggestion":"on","kb_featured":"on","kb_author_email":"luisfelipebelle10@gmail.com","kb_published_date":"16-09-2023"}]
