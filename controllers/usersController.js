@@ -11,6 +11,10 @@ function index(req, res) {
         let jsonArticles = fs.readFileSync(path.join(__dirname, '../data', 'articles.json'), 'utf-8');
         let datasArticles = JSON.parse(jsonArticles);
 
+        if(req.session.author_level == "autor"){
+            datasArticles = datasArticles.filter((element) => element.kb_author_email == req.session.author_email);
+        }
+
         res.render('../views/admin', { datas: datas, datasArticles: datasArticles, authUser: req.session.author_level });
     } catch (error) {
         console.error('Erro ao ler o arquivo:', error);
@@ -87,15 +91,22 @@ function create(req, res) {
     let jsonDatas = JSON.parse(oldjson);
 
     let userRepet = false;
+    let emailRepet = false;
 
     jsonDatas.forEach((element) => {
         if(element.author_user === user){
             userRepet = true;
         }
+        if(element.author_email === email){
+            emailRepet = true;
+        }
     });
 
     if(userRepet){
         let errormessage = "Usuário já existe"
+        res.render('../views/users_create', { errormessage: errormessage });
+    }else if(emailRepet){
+        let errormessage = "Email já existe"
         res.render('../views/users_create', { errormessage: errormessage });
     }else{
 
