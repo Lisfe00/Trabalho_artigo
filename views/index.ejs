@@ -6,6 +6,42 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="oi">Hello World!</h1>
+    <table>
+        <thead>
+            <td>Titulo</td>
+            <td>corpo</td>
+            <td>subtitulo</td>
+            <td>palavras chave</td>
+            <td>Curtidas</td>
+            <td>Publicar</td>
+            <td>Sugerido</td>
+            <td>Destaque</td>
+            <td>E-mmal do autor</td>
+            <td>Data publicação</td>
+        </thead>
+        <tbody>
+            <% if (Array.isArray(datasArticles)) { %>
+                <% datasArticles.forEach(function(dataArticle) { %>
+                    <tr>
+                        <td><%= dataArticle.kb_title %></td>
+                        <td><%= dataArticle.kb_body %></td>
+                        <td><%= dataArticle.kb_permalink %></td>
+                        <td><%= dataArticle.kb_keywords %></td>
+                        <td><%= dataArticle.kb_liked_count %></td>
+                        <td><%= dataArticle.kb_published %></td>
+                        <td><%= dataArticle.kb_suggestion %></td>
+                        <td><%= dataArticle.kb_featured %></td>
+                        <td><%= dataArticle.kb_author_email %></td>
+                        <td><%= dataArticle.kb_published_date %></td>
+                        <td><a href="/articles/like/<%= dataArticle.kb_id%>">Like</a></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td>Data is not an array.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 </body>
 </html>

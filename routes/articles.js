@@ -13,6 +13,8 @@ router.get('/update', authenticator.isAuthenticated, articleController.update);
 
 router.get('/delete/:id', authenticator.isAuthenticated, articleController.deleteArticle);
 
+router.get('/like/:id', articleController.like);
+
 
 
 module.exports = router;

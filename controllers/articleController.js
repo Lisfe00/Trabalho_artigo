@@ -106,11 +106,30 @@ function deleteArticle(req, res){
     res.redirect("/users/home");
 }
 
+function like(req, res){
+    const articleId = req.params.id;
+
+    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'articles.json'), 'utf-8');
+    let jsonDatas = JSON.parse(oldjson)
+
+
+    jsonDatas.forEach((element) => {
+        if(element.kb_id === articleId){
+            element.kb_liked_count++; 
+        }
+    });
+
+        fs.writeFileSync(path.join(__dirname, '../data', 'articles.json'), JSON.stringify(jsonDatas));
+
+    res.redirect("/");
+}
+
 // addd todas as funções aqui
 module.exports = {
     showCreate,
     create,
     showUpdate,
     update,
-    deleteArticle
+    deleteArticle,
+    like
 }
