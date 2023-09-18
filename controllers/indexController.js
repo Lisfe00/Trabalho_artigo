@@ -17,7 +17,7 @@ const index = (req, res) => {
 
 
 function login(req, res) {
-    res.render('../views/login');
+    res.render('../views/login', {error: req.error});
 }
 
 

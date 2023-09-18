@@ -24,8 +24,8 @@ function index(req, res) {
 
 //função de login
 function login(req, res) {
-    let user = req.query.user;
-    let password = req.query.password;
+    let user = req.body.user;
+    let password = req.body.password;
 
     try{
         let data = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
@@ -54,7 +54,7 @@ function login(req, res) {
             res.redirect("/users/home");
           } else {
             // Login falhou
-            res.redirect("/login");
+            res.render('../views/login', {error: true});
           }
         
     } catch (error) {

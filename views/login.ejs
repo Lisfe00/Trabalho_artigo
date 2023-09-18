@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/login.css">
+    <title>Login</title>
 </head>
 <body>
-    <form action="/users/login" method="get">
-        <input type="text" name="user">
-        <input type="text" name="password">
-        <button>ENVIAR</button>
-    </form>
+    <div class="container_white">
+        <div class="login_container">
+            <img class="image" src="../public/img/compilando_comnhecimento.png" alt="" width="60%">
+            <label class="title">Seja bem-vindo!</label>
+            <form class="form" action="/users/login" method="POST">
+                <input type="text" name="user" placeholder="Login">
+                <input type="text" name="password" placeholder="Senha">
+                <button>Entrar</button>
+            </form>
+            <% if (error) { %>
+            <p class="error">Login ou senha incorretos</p>
+            <% } %>
+        </div>
+    </div>
+    <div class="container_purple"></div>
 </body>
 </html>
