@@ -3,36 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/index.css">
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <thead>
-            <td>Titulo</td>
-            <td>corpo</td>
-            <td>subtitulo</td>
-            <td>palavras chave</td>
-            <td>Curtidas</td>
-            <td>Publicar</td>
-            <td>Sugerido</td>
-            <td>Destaque</td>
-            <td>E-mmal do autor</td>
-            <td>Data publicação</td>
-        </thead>
-        <tbody>
-            <% if (Array.isArray(datasArticles)) { %>
+    <header id="header">
+        <img class="image" src="../public/img/compilando_comnhecimento.png" width="15%">
+        <div class="as"> 
+            <a href="">Artigos destaque</a>
+            <a href="">Artigos mais curtidos</a>
+        </div>
+        <a href="" class="login">Login</a>
+    </header>
+    <main id="main">
+            <div class="title">
+                Encontre aqui o artigo <br/>perfeito <span class="span">para você.</span>
+            </div>
+            <div class="subtitle">
+                Da arquitetura de Neumann à Computação Quântica <br/>dos dias atuais.
+            </div>
+
+            <button>Quero publicar um artigo</button>
+
+            <label class="serch_label">O que você vai pesquisar hoje?</label>
+            <div class="search_container">
+                <input class="search_input" type="text" placeholder="Quem foi Turing?">
+                <svg class="image_search" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+            </div>
+
+            <label class="serch_label">Destaques</label>
+    </main>
+    <footer>
+
+    </footer>
+            <!-- <% if (Array.isArray(datasArticles)) { %>
                 <% datasArticles.forEach(function(dataArticle) { %>
                     <tr>
                         <td><%= dataArticle.kb_title %></td>
-                        <td><%= dataArticle.kb_body %></td>
-                        <td><%= dataArticle.kb_permalink %></td>
                         <td><%= dataArticle.kb_keywords %></td>
                         <td><%= dataArticle.kb_liked_count %></td>
-                        <td><%= dataArticle.kb_published %></td>
-                        <td><%= dataArticle.kb_suggestion %></td>
-                        <td><%= dataArticle.kb_featured %></td>
                         <td><%= dataArticle.kb_author_email %></td>
-                        <td><%= dataArticle.kb_published_date %></td>
                         <td><a href="/articles/like/<%= dataArticle.kb_id%>">Like</a></td>
                     </tr>
                 <% }); %>
@@ -40,8 +50,6 @@
                 <tr>
                     <td>Data is not an array.</td>
                 </tr>
-            <% } %>
-        </tbody>
-    </table>
+            <% } %> -->
 </body>
 </html>
