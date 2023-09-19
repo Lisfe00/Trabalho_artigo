@@ -4,7 +4,7 @@ const routes_users = require('./routes/users');
 const routes_articles = require('./routes/articles');
 const session = require("express-session");
 const app = express();
-const PORTA = 8069;
+const port = process.env.PORT || 8069;
 
 app.use(express.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
@@ -25,6 +25,6 @@ app.use("/users", routes_users);
 app.use("/articles", routes_articles);
 
 
-app.listen(PORTA, () => {
-    console.log(`iniciado na porta ${PORTA}`);
+app.listen(port, () => {
+    console.log(`iniciado na porta ${port}`);
 })
