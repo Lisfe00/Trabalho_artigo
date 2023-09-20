@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+const crypto = require('crypto');
 
 //função puxa a home para admins e autores
 function index(req, res) {
@@ -26,6 +27,11 @@ function index(req, res) {
 function login(req, res) {
     let user = req.body.user;
     let password = req.body.password;
+
+    password = crypto
+    .createHash('sha256')
+    .update(password)
+    .digest('hex');
 
     try{
         let data = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
@@ -86,6 +92,11 @@ function create(req, res) {
     let password = req.query.password;
     let acess = req.query.acess;
     let status = (req.query.status)? "on" : "off";
+
+    password = crypto
+    .createHash('sha256')
+    .update(password)
+    .digest('hex');
 
     let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
     let jsonDatas = JSON.parse(oldjson);
