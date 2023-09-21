@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/9efd3831-6fc1-4f2c-b728-07702c8cc50a/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Compilando-conhecimento",
+    "appService.deploySubpath": "."
+}
