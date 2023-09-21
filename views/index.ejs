@@ -40,15 +40,14 @@
                     <% datasArticles.forEach(function(dataArticle) { %>
                 <div class="card">
                     <div class="card-title">
-                        <input type="text" id="id_article" value="<%= dataArticle.kb_id%>" hidden>
                         <span class="titulo"><%= dataArticle.kb_title %></span>
                         <div>
                             <span><%= dataArticle.kb_liked_count %></span>
-                            <svg class="favorite" onclick="contalike()" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+                            <img id="image_favorite" src="../public/img/favorite.svg" onclick="like(<%= dataArticle.kb_id%>)">
                         </div>
                     </div>
                     <div class="card-body">
-                        <span class="autor"><%= dataArticle.kb_author_email %></span>
+                        <span class="autor"><%= dataArticle.author_name %></span>
                         <span class="p_chave"><%= dataArticle.kb_keywords %></span>
                     </div>
                     <a class="card_link" href="">ler esse artigo ></a>
@@ -56,7 +55,6 @@
                 <% }); %>
                 <% } else { %>
                     <label class="serch_label">Não há artigos</label>
-
                 <% } %>
             </div>
 
@@ -65,20 +63,7 @@
     <footer>
 
     </footer>
-            <!-- <% if (Array.isArray(datasArticles)) { %>
-                <% datasArticles.forEach(function(dataArticle) { %>
-                    <tr>
-                        <td><%= dataArticle.kb_title %></td>
-                        <td><%= dataArticle.kb_keywords %></td>
-                        <td><%= dataArticle.kb_liked_count %></td>
-                        <td><%= dataArticle.kb_author_email %></td>
-                        <td><a href="/articles/like/<%= dataArticle.kb_id%>">Like</a></td>
-                    </tr>
-                <% }); %>
-            <% } else { %>
-                <tr>
-                    <td>Data is not an array.</td>
-                </tr>
-            <% } %> -->
+
+    <script src="../public/js/index.js"></script>
     </body>
 </html>
