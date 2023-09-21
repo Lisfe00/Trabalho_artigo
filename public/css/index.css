@@ -55,7 +55,7 @@ a {
     color: #A34ABA;
 }
 
-button {
+.button {
     background-color: #F6F6F6;
     color: #A34ABA;
     border: solid;
@@ -103,4 +103,74 @@ button {
     right: 15px;
     top: 12px;
     fill: gray;
+}
+
+#artigos_container {
+    width: 90%;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10% 0;
+    padding-top: 2%;
+}
+
+.card {
+    background-color: #A34ABA;
+    width: 90%;
+    height: 100%;
+    border: solid;
+    border-color: black;
+    border-radius: 25px;
+    color: white;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.card-body {
+    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.autor {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5%;
+}
+
+.p_chave {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 15%;
+}
+
+.card_link {
+    display: flex;
+    justify-content: flex-end;
+    color: #F6F6F6;
+    padding-right: 7%;
+    padding-bottom: 5%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 12;
+}
+
+.favorite {
+    fill: white;
 }
