@@ -23,9 +23,9 @@ const index = (req, res) => {
 
         });
         
-        //datasArticles.sort(function(a, b) {
-           // return b.kb_liked_count - a.kb_liked_count;
-          //});
+        datasArticles.sort(function(a, b) {
+           return b.kb_liked_count - a.kb_liked_count;
+          });
 
         res.render('../views/index', { datasArticles: datasArticles});
     } catch (error) {
