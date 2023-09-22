@@ -121,7 +121,7 @@ function like(req, res){
 
         fs.writeFileSync(path.join(__dirname, '../data', 'articles.json'), JSON.stringify(jsonDatas));
 
-    res.redirect("/");
+    res.jsonDatas;
 }
 
 // addd todas as funções aqui

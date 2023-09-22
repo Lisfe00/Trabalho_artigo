@@ -8,7 +8,7 @@ const index = (req, res) => {
     try{
         let jsonArticles = fs.readFileSync(path.join(__dirname, '../data', 'articles.json'), 'utf-8');
         let datasArticles = JSON.parse(jsonArticles);
-
+        
         let jsonUsers = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
         let datasUsers = JSON.parse(jsonUsers);
 
@@ -20,8 +20,12 @@ const index = (req, res) => {
                     element.author_name = element.kb_author_email;
                 }
             });
-        });
 
+        });
+        
+        //datasArticles.sort(function(a, b) {
+           // return b.kb_liked_count - a.kb_liked_count;
+          //});
 
         res.render('../views/index', { datasArticles: datasArticles});
     } catch (error) {

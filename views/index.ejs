@@ -23,7 +23,7 @@
                 Da arquitetura de Neumann à Computação Quântica <br/>dos dias atuais.
             </div>
 
-            <a href="/login"><button class="button">Quero publicar um artigo</button></a>
+            <button class="button"><a href="/login"></a>Quero publicar um artigo</a></button>
 
             <label class="serch_label">O que você vai pesquisar hoje?</label>
             <div class="search_container">
@@ -41,9 +41,9 @@
                 <div class="card">
                     <div class="card-title">
                         <span class="titulo"><%= dataArticle.kb_title %></span>
-                        <div>
-                            <span><%= dataArticle.kb_liked_count %></span>
-                            <img id="image_favorite" src="../public/img/favorite.svg" onclick="like("<%= dataArticle.kb_id%>")">
+                        <div class="component_title" onclick="like(this, '<%= dataArticle.kb_id%>')">
+                            <span class="like_count"><%= dataArticle.kb_liked_count %></span>
+                            <img id="image_favorite" src="../public/img/heart.svg">
                         </div>
                     </div>
                     <div class="card-body">
@@ -63,7 +63,7 @@
     <footer>
 
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../public/js/index.js"></script>
     </body>
 </html>

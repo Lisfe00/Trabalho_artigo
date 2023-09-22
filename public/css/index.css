@@ -174,3 +174,7 @@ a {
 .favorite {
     fill: white;
 }
+
+.component_title {
+    margin: 5%;
+}
