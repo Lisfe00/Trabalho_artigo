@@ -176,5 +176,10 @@ a {
 }
 
 .component_title {
-    margin: 5%;
+    padding: 5%;
+}
+
+#favorite_button {
+    background: none;
+    border: none;
 }

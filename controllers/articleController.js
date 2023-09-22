@@ -112,16 +112,18 @@ function like(req, res){
     let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'articles.json'), 'utf-8');
     let jsonDatas = JSON.parse(oldjson)
 
+    let likes = 0;
 
     jsonDatas.forEach((element) => {
         if(element.kb_id === articleId){
             element.kb_liked_count++; 
+            likes = element.kb_liked_count;
         }
     });
 
         fs.writeFileSync(path.join(__dirname, '../data', 'articles.json'), JSON.stringify(jsonDatas));
 
-    res.jsonDatas;
+    res.json(likes);
 }
 
 // addd todas as funções aqui
