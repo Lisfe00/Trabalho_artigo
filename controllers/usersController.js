@@ -16,7 +16,18 @@ function index(req, res) {
             datasArticles = datasArticles.filter((element) => element.kb_author_email == req.session.author_email);
         }
 
-        res.render('../views/admin', { datas: datas, datasArticles: datasArticles, authUser: req.session.author_level });
+        datasArticles.forEach((element) => {
+            datas.forEach((user) => {
+                if(element.kb_author_email === user.author_email){
+                    element.author_name = user.author_name;
+                }else{
+                    element.author_name = element.kb_author_email;
+                }
+            });
+
+        });
+
+        res.render('../views/admin', { datas: datas, datasArticles: datasArticles, authUser: req.session.author_level, authName: req.session.author_user });
     } catch (error) {
         console.error('Erro ao ler o arquivo:', error);
     }

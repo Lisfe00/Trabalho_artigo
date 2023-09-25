@@ -30,7 +30,7 @@ main {
     gap: 10%;
 }
 
-a {
+.link {
     color: gray;
     text-decoration: none;
 }
@@ -182,4 +182,60 @@ a {
 #favorite_button {
     background: none;
     border: none;
+}
+
+.card-articles {
+    background-color: #A34ABA;
+    width: 100%;
+    height: 100px;
+    border: solid;
+    border-color: black;
+    border-radius: 25px;
+    color: white;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lable-artigos {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 26;
+    color: #545454;   
+}
+
+.admin-card-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2%;
+}
+
+.garbage-img {
+    fill: white;
+    margin-right: 5%;
+}
+
+.card-users {   
+    background-color: #A34ABA;
+    width: 100%;
+    height: 100px;
+    border: solid;
+    border-color: black;
+    border-radius: 25px;
+    color: white;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo-admin {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
 }
