@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="css" href="../public/css/create.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1>create users</h1>
     <form action="/users/create">
@@ -29,8 +32,9 @@
     <a href="/users/home">VOLTAR</a>
 
     <% if (errormessage) { %>
-        <div><%= errormessage %></div>
+    <div><%= errormessage %></div>
     <% }%>
 
 </body>
+
 </html>
