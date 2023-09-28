@@ -14,10 +14,8 @@ const index = (req, res) => {
 
         datasArticles.forEach((element) => {
             datasUsers.forEach((user) => {
-                if(element.kb_author_email === user.author_email){
+                if(element.kb_author_email == user.author_email){
                     element.author_name = user.author_name;
-                }else{
-                    element.author_name = element.kb_author_email;
                 }
             });
         });
