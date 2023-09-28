@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="css" href="../public/css/create.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/create.css">
+    <link rel="shortcut icon" href="/public/img/logo-icon.svg" type="image/x-icon">
+    <title>Cadastrar usuário</title>
 </head>
 
-<body>
+<!-- <body>
     <h1>create users</h1>
     <form action="/users/create">
         <label>nome</label>
@@ -34,6 +35,62 @@
     <% if (errormessage) { %>
     <div><%= errormessage %></div>
     <% }%>
+
+</body> -->
+
+
+<body class="body">
+    <section class="return">
+        <img class="image" src="/public/img/compilando_comnhecimento.png" width="15%">
+        <div>
+            <a href="/users/home" style="width: auto;">Home</a>
+            <!-- <a class="link" href="/users//show/create">Cadastrar artigo</a> -->
+            <a class="link" href="/users/logout">Sair</a>
+        </div>
+    </section>
+    <main>
+        <section style="width: auto;">
+            <h1 class="title">Crie novos <strong>usuários!</strong>
+            </h1>
+        </section>
+        <section class="create-form">
+            <form action="/articles/create" class="form">
+                <div class="item-text">
+                    <label>Qual o título do seu artigo?</label>
+                    <input type="text" name="title">
+                </div>
+                <div class="item-text">
+                    <label>E o seu brilhante subtítulo?</label>
+                    <input type="text" name="permalink">
+                </div>
+                <div class="item-text">
+                    <label>Quais são as Palavras chaves?</label>
+                    <input type="text" name="keywords">
+                    <p>Separe as palavras chaves por vírgula, ok?</p>
+                </div>
+                <div class="item-text">
+                    <label>Escreva aqui o corpo do seu artigo:</label>
+                    <textarea name="body" id="body" cols="30" rows="10" class="textarea-body"></textarea>
+                </div>
+                <section class="options-form">
+                    <div>
+                        <label>Quero publicar</label>
+                        <input type="checkbox" name="published" value="on" checked>
+                    </div>
+                    <div>
+                        <label>Apenas sugerir</label>
+                        <input type="checkbox" name="suggestion" value="on" checked>
+                    </div>
+                    <div>
+                        <label>Destacar</label>
+                        <input type="checkbox" name="featured" value="on" checked>
+                    </div>
+                </section>
+                <footer><button class="submit-button">Cadastrar artigo</button></footer>
+            </form>
+        </section>
+
+    </main>
 
 </body>
 

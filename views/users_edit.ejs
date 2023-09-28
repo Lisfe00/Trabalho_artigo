@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/public/img/logo-icon.svg" type="image/x-icon">
     <title>Document</title>
 </head>
+
 <body>
     <h1>edit users</h1>
     <form action="/users/update">
@@ -19,7 +22,7 @@
         <input type="text" name="password" value="<%= user.author_pwd %>">
         <label>Tipo de acesso</label>
         <select name="acess">
-            <option value="admin" <% if (user.author_level == "admin") { %> selected <% } %> >Admin</option>
+            <option value="admin" <% if (user.author_level == "admin") { %> selected <% } %>>Admin</option>
             <option value="autor" <% if (user.author_level == "autor") { %> selected <% } %>>autor</option>
         </select>
         <label>Ativo</label>
@@ -30,4 +33,5 @@
     <a href="/users/home">VOLTAR</a>
 
 </body>
+
 </html>
