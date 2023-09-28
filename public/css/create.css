@@ -19,7 +19,7 @@ article {
   padding: 30px;
   font-family: Poppins, sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 20px;
   align-items: center;
 }
 
@@ -110,7 +110,7 @@ footer {
     background-color: transparent;
     font-family: Poppins, sans-serif;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     color: #a34aba;
     border: 3px solid #a34aba;
     border-radius: 12px;
@@ -166,7 +166,8 @@ footer {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   color: gray;
-
+  padding: 0px;
+  margin: 0px;
   > p {
     padding: 0px;
     margin: 0px;
@@ -182,10 +183,19 @@ footer {
 #favorite_button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .likes {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 5px;
+}
+
+.title-header {
+  margin: 20px 0px;
+}
+
+.like_count {
+  font-size: 16px;
 }

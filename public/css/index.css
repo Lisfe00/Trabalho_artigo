@@ -5,10 +5,11 @@ body {
   overflow: hidden;
   background-color: #f6f6f6;
   display: grid;
-  grid-template-rows: 20% 70% 10%;
-  padding: 0 50px;
+  padding: 30px;
   min-height: 100vh;
   overflow: scroll;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
@@ -19,7 +20,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: Light;
 }
@@ -56,16 +57,18 @@ main {
 }
 
 .button {
-  background-color: #f6f6f6;
+  height: auto;
+  width: 300px;
+  background-color: transparent;
   color: #a34aba;
   border: solid;
   border-radius: 15px;
-  padding: 1%;
-  margin-top: 2%;
-  width: 25%;
+  padding: 10px 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 24;
+  font-size: 18px;
+  margin-top: 2%;
+  cursor: pointer;
 }
 
 .serch_label {
@@ -74,7 +77,7 @@ main {
   justify-content: center;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 26;
+  font-size: 24px;
   color: #545454;
 }
 
@@ -83,19 +86,23 @@ main {
   display: flex;
   justify-self: center;
   position: relative;
-  width: 40%;
+  width: 45%;
+  display: flex;
+  align-items: center;
 }
 
 .search_input {
-  padding: 8px 20px;
+  padding: 10px 20px;
   width: 100%;
+  height: auto;
   text-align: start;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 18;
+  font-size: 18px;
   border: solid;
   border-color: #545454;
   border-radius: 20px;
+  background-color: transparent;
 }
 
 .image_search {
@@ -105,15 +112,31 @@ main {
   fill: gray;
 }
 
-#artigos_container {
-    width: 90%;
-    justify-self: center;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10% 0;
-    padding-top: 2%;
-    padding-bottom: 5%;
+.artigos_container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
+#artigos_container {
+  width: 100%;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7% 0;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  justify-items: center;
+}
+
+.card-articles {
+  background-color: #a34aba;
+  border: 3px solid black;
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .card {
@@ -129,7 +152,7 @@ main {
 .card-title {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 10%;
@@ -166,11 +189,11 @@ main {
   display: flex;
   justify-content: flex-end;
   color: #f6f6f6;
-  padding-right: 7%;
-  padding-bottom: 5%;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 12;
+  font-size: 16px;
+  padding: 20px;
+  text-decoration: none;
 }
 
 .favorite {
@@ -178,7 +201,9 @@ main {
 }
 
 .component_title {
-  padding: 5%;
+  padding: 0% 5%;
+  display: flex;
+  align-items: center;
 }
 
 #favorite_button {
@@ -186,26 +211,12 @@ main {
   border: none;
 }
 
-.card-articles {
-  background-color: #a34aba;
-  width: 100%;
-  height: 100px;
-  border: solid;
-  border-color: black;
-  border-radius: 25px;
-  color: white;
-  margin-bottom: 2%;
-  display: flex;
-  justify-content: space-between;
-}
-
 .lable-artigos {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  padding: 20px 0px;
   display: flex;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 26;
+  font-size: 22px;
   color: #545454;
 }
 
@@ -213,7 +224,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 2%;
+  /* margin-left: 2%; */
 }
 
 .garbage-img {
@@ -247,6 +258,10 @@ main {
   gap: 15px;
   align-items: center;
   padding: 20px;
+
+  > a {
+    height: 30px;
+  }
 
   > img {
     cursor: pointer;
