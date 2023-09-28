@@ -52,7 +52,7 @@
                         <span class="autor"><%= dataArticle.author_name %></span>
                         <span class="p_chave"><%= dataArticle.kb_keywords %></span>
                     </div>
-                    <a class="card_link" href="">ler esse artigo ></a>
+                    <a class="card_link" href="/articles/view/<%= dataArticle.kb_id%>">ler esse artigo ></a>
                 </div>
                 <% }); %>
                 <% } else { %>

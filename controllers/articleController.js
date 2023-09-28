@@ -140,7 +140,7 @@ function view(req, res){
         }
     });
 
-    res.render('../views/articles_view', { article: article });
+    res.render('../views/view_artigo', { article: article });
 }
 
 // addd todas as funções aqui

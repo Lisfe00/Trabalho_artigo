@@ -20,7 +20,6 @@ const index = (req, res) => {
                     element.author_name = element.kb_author_email;
                 }
             });
-
         });
         
         datasArticles.sort(function(a, b) {
