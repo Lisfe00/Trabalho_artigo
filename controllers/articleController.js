@@ -132,6 +132,17 @@ function view(req, res){
     let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'articles.json'), 'utf-8');
     let jsonDatas = JSON.parse(oldjson)
 
+    let jsonUsers = fs.readFileSync(path.join(__dirname, '../data', 'users.json'), 'utf-8');
+    let datasUsers = JSON.parse(jsonUsers);
+
+    jsonDatas.forEach((element) => {
+        datasUsers.forEach((user) => {
+            if(element.kb_author_email === user.author_email){
+                element.author_name = user.author_name;
+            }
+        });
+    });
+
     let article;
 
     jsonDatas.forEach((element) => {

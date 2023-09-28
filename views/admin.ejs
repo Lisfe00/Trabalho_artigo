@@ -44,7 +44,7 @@
                     <a href="/articles/show/update/<%= dataArticle.kb_id%>">
                         <img class="garbage-img" src="../public/img/pencil.svg" alt="" width="25px">
                     </a>
-                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px">
+                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px" onclick="garbage(this, '<%= dataArticle.kb_id %>')">
                 </div>
             </div>
             <% }); %>
@@ -71,7 +71,7 @@
                     <a href="/users/show/update/<%= data.author_id%>">
                         <img class="garbage-img" src="../public/img/pencil.svg" alt="" width="25px">
                     </a>
-                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px">
+                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px" onclick="garbageUsers(this, '<%= data.author_id %>')">
                 </div>
             </div>
             <% }); %>
@@ -81,8 +81,7 @@
         </div>
         <% } %>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../public/js/index.js"></script>
 </body>
 
