@@ -51,6 +51,7 @@
             <section class="create-form">
                 <form action="/users/update" class="form">
                     <div class="item-text">
+                        <input type="text" name="id" hidden value="<%= user.author_id %>">
                         <label>Qual o nome completo do usuário?</label>
                         <input type="text" name="name" value="<%= user.author_name %>">
                     </div>

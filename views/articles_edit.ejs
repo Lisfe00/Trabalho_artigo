@@ -26,6 +26,7 @@
         <section class="create-form">
             <form action="/articles/update" class="form">
                 <div class="item-text">
+                    <input type="text" hidden name="id" value="<%= article.kb_id%>">
                     <label>Qual o título do seu artigo?</label>
                     <input type="text" name="title" value="<%= article.kb_title%>">
                 </div>

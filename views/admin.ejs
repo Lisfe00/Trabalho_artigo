@@ -31,7 +31,6 @@
 
         <div class="artigos_container">
             <% if (Array.isArray(datasArticles)) { %>
-<<<<<<< HEAD
             <% datasArticles.forEach(function(dataArticle) { %>
             <div class="card-articles">
                 <div class="admin-card-title">
@@ -48,18 +47,6 @@
                 </div>
             </div>
             <% }); %>
-=======
-                <% datasArticles.forEach(function(dataArticle) { %>
-                    <div class="card-articles">
-                        <div class="admin-card-title">
-                            <a class="titulo-admin" href="/articles/show/update/<%= dataArticle.kb_id%>" ><%= dataArticle.kb_title %></a>
-                            <br>
-                            <span class="autor"><%= dataArticle.author_name %></span>
-                        </div>
-                        <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="2%" onclick="garbage(this, '<%= dataArticle.kb_id%>')"">
-                    </div>
-                <% }); %>
->>>>>>> 19ebd807dd13c934ed0d213aec1f65ed04c52136
             <% } else { %>
             <label class="serch_label">Não há artigos</label>
             <% } %>
@@ -72,9 +59,7 @@
 
         <div class="artigos_container">
             <% if (Array.isArray(datas)) { %>
-<<<<<<< HEAD
-            <% datas.forEach(function(data) { %>
-            <div class="card-users">
+            <% datas.forEach(function(data) { %> <div class="card-users">
                 <div class="admin-card-title">
                     <a class="titulo-admin" href="/users/show/update/<%= data.author_id%>"><%= data.author_name %></a>
                     <br>
@@ -89,30 +74,15 @@
                 </div>
             </div>
             <% }); %>
-=======
-                <% datas.forEach(function(data) { %>
-                    <div class="card-users">
-                        <div class="admin-card-title">
-                            <a class="titulo-admin" href="/users/show/update/<%= data.author_id%>"><%= data.author_name %></a>
-                            <br>
-                            <span class="autor"><%= data.author_email %></span>
-                        </div>
-                        <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="2%" onclick="garbageUsers(this, '<%= data.author_id%>')">
-                    </div>
-                <% }); %>
->>>>>>> 19ebd807dd13c934ed0d213aec1f65ed04c52136
             <% } else { %>
             <label class="serch_label">Não há artigos</label>
             <% } %>
         </div>
         <% } %>
     </main>
-<<<<<<< HEAD
-=======
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
     <script src="../public/js/index.js"></script>
->>>>>>> 19ebd807dd13c934ed0d213aec1f65ed04c52136
 </body>
 
 </html>
