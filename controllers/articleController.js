@@ -103,7 +103,7 @@ function deleteArticle(req, res){
 
     fs.writeFileSync(path.join(__dirname, '../data', 'articles.json'), JSON.stringify(jsonDatas));
 
-    res.redirect("/users/home");
+    res.json({status: "ok"});
 }
 
 function like(req, res){
