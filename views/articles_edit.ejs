@@ -3,34 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/public/css/create.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/public/img/logo-icon.svg" type="image/x-icon">
-    <title>Document</title>
+    <title>Cadastrar artigo</title>
 </head>
 
-<body>
-    <h1>edit articles</h1>
-    <form action="/articles/update">
-        <input type="text" hidden name="id" value="<%= article.kb_id%>">
-        <label>tiulo</label>
-        <input type="text" name="title" value="<%= article.kb_title%>">
-        <label>corpo</label>
-        <input type="text" name="body" value="<%= article.kb_body%>">
-        <label>subtitulo</label>
-        <input type="text" name="permalink" value="<%= article.kb_permalink%>">
-        <label>palavras chave</label>
-        <input type="text" name="keywords" value="<%= article.kb_keywords%>">
-        <label>Publicar</label>
-        <input type="checkbox" name="published" value="on" <% if (article.kb_published == "on"){%> checked <% } %>>
-        <label>Sugerido</label>
-        <input type="checkbox" name="suggestion" value="on" <% if (article.kb_suggestion == "on"){%> checked <% } %>>
-        <label>Destaque</label>
-        <input type="checkbox" name="featured" value="on" <% if (article.kb_featured == "on"){%> checked <% } %>>
-        <button>ENVIAR</button>
-    </form>
-
-    <a href="/users/home">VOLTAR</a>
-
+<body class="body">
+    <section class="return">
+        <img class="image" src="/public/img/compilando_comnhecimento.png" width="15%">
+        <div>
+            <a href="/users/home" style="width: auto;">Home</a>
+            <a class="link" href="/users/show/create">Cadastrar usuário</a>
+            <a class="link" href="/users/logout">Sair</a>
+        </div>
+    </section>
+    <main>
+        <section style="width: auto;">
+            <h1 class="title">Edite o seu <strong>melhor artigo!</strong>
+            </h1>
+        </section>
+        <section class="create-form">
+            <form action="/articles/update" class="form">
+                <div class="item-text">
+                    <label>Qual o título do seu artigo?</label>
+                    <input type="text" name="title" value="<%= article.kb_title%>">
+                </div>
+                <div class="item-text">
+                    <label>E o seu brilhante subtítulo?</label>
+                    <input type="text" name="permalink" value="<%= article.kb_permalink%>">
+                </div>
+                <div class="item-text">
+                    <label>Quais são as Palavras chaves?</label>
+                    <input type="text" name="keywords" value="<%= article.kb_keywords%>">
+                    <p>Separe as palavras chaves por vírgula, ok?</p>
+                </div>
+                <div class="item-text">
+                    <label>Escreva aqui o corpo do seu artigo:</label>
+                    <textarea name="body" id="body" cols="30" rows="10"
+                        class="textarea-body"><%= article.kb_body%></textarea>
+                </div>
+                <section class="options-form">
+                    <div class="checkbox-div">
+                        <label>Quero publicar</label>
+                        <input type="checkbox" name="published" value="on" <% if (article.kb_published == "on"){%>
+                            checked <% } %>>
+                    </div>
+                    <div class="checkbox-div">
+                        <label>Apenas sugerir</label>
+                        <input type="checkbox" name="suggestion" value="on" <% if (article.kb_suggestion == "on"){%>
+                            checked <% } %>>
+                    </div>
+                    <div class="checkbox-div">
+                        <label>Destacar</label>
+                        <input type="checkbox" name="featured" value="on" <% if (article.kb_featured == "on"){%> checked
+                            <% } %>>
+                    </div>
+                </section>
+                <footer>
+                    <button class="submit-button" type="submit">Atualizar artigo</button>
+                </footer>
+            </form>
+        </section>
+    </main>
 </body>
 
 </html>
