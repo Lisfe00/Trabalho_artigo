@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/index.css">
     <link rel="shortcut icon" href="/public/img/logo-icon.svg" type="image/x-icon">
-    <title>Document</title>
+    <title>Gerenciamento</title>
 </head>
 
 <body>
@@ -21,12 +21,20 @@
         <a class="link" href="/users/logout">Sair</a>
     </header>
     <main id="main">
-        <div class="title">
-            Que bom ter você aqui, <br><%= authName %>!
-            <div class="subtitle">
-                Como administrador você pode gerenciar os <br>artigos e usuários!
-            </div>
-        </div>
+        <section style="display: flex; justify-content: space-between; align-items: center;">
+            <article>
+                <div class="title">
+                    Que bom ter você aqui, <br><%= authName %>!
+                    <div class="subtitle">
+                        Como administrador você pode gerenciar os <br>artigos e usuários!
+                    </div>
+                </div>
+            </article>
+            <article>
+                <img src="../public/img/animation-admin.gif" alt="" width="650px">
+            </article>
+        </section>
+
 
         <label class="lable-artigos">Artigos</label>
 
@@ -44,7 +52,8 @@
                     <a href="/articles/show/update/<%= dataArticle.kb_id%>">
                         <img class="garbage-img" src="../public/img/pencil.svg" alt="" width="25px">
                     </a>
-                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px" onclick="garbage(this, '<%= dataArticle.kb_id %>')">
+                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px"
+                        onclick="garbage(this, '<%= dataArticle.kb_id %>')">
                 </div>
             </div>
             <% }); %>
@@ -71,7 +80,8 @@
                     <a href="/users/show/update/<%= data.author_id%>">
                         <img class="garbage-img" src="../public/img/pencil.svg" alt="" width="25px">
                     </a>
-                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px" onclick="garbageUsers(this, '<%= data.author_id %>')">
+                    <img class="garbage-img" src="../public/img/garbage.svg" alt="" width="30px"
+                        onclick="garbageUsers(this, '<%= data.author_id %>')">
                 </div>
             </div>
             <% }); %>

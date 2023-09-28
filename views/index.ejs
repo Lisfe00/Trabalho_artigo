@@ -12,20 +12,25 @@
 <body>
     <header id="header">
         <img class="image" src="../public/img/compilando_comnhecimento.png" width="15%">
-
         <a class="link" href="/login" class="login">Login</a>
     </header>
     <main id="main">
-        <div class="title">
-            Encontre aqui o artigo <br />perfeito <span class="span">para você.</span>
-        </div>
-        <div class="subtitle">
-            Da arquitetura de Neumann à Computação Quântica <br />dos dias atuais.
-        </div>
+        <section style="display: flex; justify-content: space-between; align-items: center;">
+            <article>
+                <div class="title">
+                    Encontre aqui o artigo <br />perfeito <span class="span">para você.</span>
+                </div>
+                <div class="subtitle">
+                    Da arquitetura de Neumann à Computação Quântica <br />dos dias atuais.
+                </div>
+                <button class="button"><a href="/login">Quero publicar um artigo</a></button>
+            </article>
+            <article>
+                <img src="../public/img/animation.gif" alt="" width="650px">
+            </article>
+        </section>
 
-        <button class="button"><a href="/login"></a>Quero publicar um artigo</a></button>
-
-        <label class="serch_label">O que você vai pesquisar hoje?</label>
+        <label class=" serch_label">O que você vai pesquisar hoje?</label>
         <div class="search_container">
             <input class="search_input" type="text" placeholder="Quem foi Turing?" onkeyup="search()">
         </div>

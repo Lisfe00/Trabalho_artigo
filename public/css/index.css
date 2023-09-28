@@ -69,6 +69,10 @@ main {
   font-size: 18px;
   margin-top: 2%;
   cursor: pointer;
+  > a {
+    text-decoration: none;
+    color: #a34aba;
+  }
 }
 
 .serch_label {
@@ -123,9 +127,9 @@ main {
   justify-self: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 7% 0;
+  gap: 3.5% 0;
   padding-top: 2%;
-  padding-bottom: 5%;
+  padding-bottom: 12%;
   justify-items: center;
 }
 

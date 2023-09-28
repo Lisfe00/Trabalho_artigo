@@ -178,6 +178,7 @@ footer {
   width: 100%;
   height: auto;
   text-align: justify;
+  font-size: 16px;
 }
 
 #favorite_button {
@@ -188,7 +189,7 @@ footer {
 
 .likes {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 5px;
 }
 
