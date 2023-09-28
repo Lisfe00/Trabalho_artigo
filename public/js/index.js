@@ -36,3 +36,33 @@ function search(){
         });
     }
 }
+
+function garbage(element, id) {
+
+    if (!confirm("Tem certeza que deseja excluir este artigo?")) {
+        return false;
+    }
+
+    $.ajax({
+        url: '/articles/delete/'+id,
+        type: 'GET',
+        success: function(result) {
+            element.parentElement.remove();
+        }
+    });
+}
+
+function garbageUsers(element, id) {
+
+    if (!confirm("Tem certeza que deseja excluir este artigo?")) {
+        return false;
+    }
+
+    $.ajax({
+        url: '/users/delete/'+id,
+        type: 'GET',
+        success: function(result) {
+            element.parentElement.remove();
+        }
+    });
+}
