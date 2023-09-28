@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="shortcut icon" href="/public/img/logo-icon.svg" type="image/x-icon">
     <title>Document</title>
 </head>
+
 <body>
     <header id="header">
         <img class="image" src="../public/img/compilando_comnhecimento.png" width="15%">
-        <div class="as"> 
+        <div class="as">
             <a class="link" href="/articles/show/create">Cadastrar artigo</a>
-            <a class="link" <% if (authUser == "admin") { %> href="/users/show/create" <% }else { %> href="/users/home" <% } %>>Cadastrar usuário</a>
+            <a class="link" <% if (authUser == "admin") { %> href="/users/show/create" <% }else { %> href="/users/home"
+                <% } %>>Cadastrar usuário</a>
         </div>
         <a class="link" href="/users/logout">logout</a>
     </header>
@@ -38,13 +42,13 @@
                     </div>
                 <% }); %>
             <% } else { %>
-                <label class="serch_label">Não há artigos</label>
-            <% } %>      
+            <label class="serch_label">Não há artigos</label>
+            <% } %>
         </div>
 
         <br>
-    
-    <% if (authUser == "admin") { %>
+
+        <% if (authUser == "admin") { %>
         <label class="lable-artigos">Usuários</label>
 
         <div class="artigos_container">
@@ -60,8 +64,8 @@
                     </div>
                 <% }); %>
             <% } else { %>
-                <label class="serch_label">Não há artigos</label>
-            <% } %>      
+            <label class="serch_label">Não há artigos</label>
+            <% } %>
         </div>
         <% } %>
     </main>
@@ -69,4 +73,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../public/js/index.js"></script>
 </body>
+
 </html>
