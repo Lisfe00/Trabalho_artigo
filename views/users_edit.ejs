@@ -9,29 +9,6 @@
     <title>Document</title>
 </head>
 
-<!-- <body> -->
-<!-- <h1>edit users</h1>
-    <form action="/users/update">
-        <input type="text" name="id" hidden value="<%= user.author_id %>">
-        <label>nome</label>
-        <input type="text" name="name" value="<%= user.author_name %>">
-        <label>email</label>
-        <input type="email" name="email" value="<%= user.author_email %>">
-        <label>usuário</label>
-        <input type="text" name="user" value="<%= user.author_user %>">
-        <label>senha</label>
-        <input type="text" name="password" value="<%= user.author_pwd %>">
-        <label>Tipo de acesso</label>
-        <select name="acess">
-            <option value="admin" <% if (user.author_level == "admin") { %> selected <% } %>>Admin</option>
-            <option value="autor" <% if (user.author_level == "autor") { %> selected <% } %>>autor</option>
-        </select>
-        <label>Ativo</label>
-        <input type="checkbox" name="status" value="on" <% if (user.author_status == "on") { %> checked <% } %>>
-        <button>ENVIAR</button>
-    </form> -->
-<!-- </body> -->
-
 <body class="body">
     <section class="return">
         <img class="image" src="/public/img/compilando_comnhecimento.png" width="15%">
@@ -65,7 +42,8 @@
                     </div>
                     <div class="item-text">
                         <label>Digite a senha de acesso:</label>
-                        <input type="password" name="password" value="<%= user.author_pwd %>">
+                        <input type="password" name="password" value="">
+                        <input type="password" name="password2" value="<%= user.author_pwd %>" hidden>
                     </div>
                     <section class="options-form">
                         <div>

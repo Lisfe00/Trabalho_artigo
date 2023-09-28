@@ -185,6 +185,7 @@ function update(req, res) {
   let email = req.query.email;
   let user = req.query.user;
   let password = req.query.password;
+  let password2 = req.query.password2;
   let acess = req.query.acess;
   let status = req.query.status ? "on" : "off";
 
@@ -193,6 +194,12 @@ function update(req, res) {
     "utf-8"
   );
   let jsonDatas = JSON.parse(oldjson);
+
+  if (password == "" || password == null){
+    password = password2;
+  }else{
+    password =  password = crypto.createHash("sha256").update(password).digest("hex");
+  }
 
   jsonDatas.forEach((element) => {
     if (element.author_id === id) {
