@@ -14,18 +14,23 @@
     <section class="return">
         <img class="image" src="/public/img/compilando_comnhecimento.png" width="15%">
         <div>
-            <a href="/" style="width: auto;">Home</a>
+            <a href="/" style="width: auto;">Blog</a>
             <!-- <a class="link" href="/users//show/create">Cadastrar artigo</a> -->
             <a class="link" href="/login" class="login">Login</a>
         </div>
     </section>
     <main style="width: 100%;">
         <header class="article-header">
-            <div class="title">
-                <%= article.kb_title%>
+            <div class="title-header">
+                <div class="title" style="color: #a34aba;"> <%= article.kb_title%></div>
+                <p class="subtitle">
+                    <i><%= article.kb_permalink%></i></p>
             </div>
             <div class="subtitle">
-                <p>
+                <p style="font-size: 16px; color: #a34aba;">
+                    Palavras chaves: <%= article.kb_keywords%>
+                </p>
+                <p style="font-size: 16px;">
                     <%= article.kb_author_email%>
                 </p>
                 <p style="font-size: 16px;">

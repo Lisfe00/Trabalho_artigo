@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap");
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 40% 60%;
-  }
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  font-family: "Poppins", sans-serif;
+}
 
 .container_white {
   height: 100vh;
-  background-color:  #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 .container_purple {
-  height: 100vh; 
-  background-color:  #A34ABA;
+  height: 100vh;
+  background-color: #a34aba;
 }
 
 .login_container {
@@ -27,45 +28,61 @@ body {
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap: 10px;
-    
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 10px;
+  align-items: center;
 }
 
 .title {
-    margin-bottom: 5%;
-    margin-top: 5%;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    color: gray;
-    font-size: 25px;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: gray;
+  font-size: 25px;
 }
 
 input {
-    border-radius: 25px;
-    padding: 16px 20px;
-    border-color: #545454;
-    border-width: 3px;
-    border-style: solid;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 25px;
+  border-radius: 25px;
+  padding: 16px 20px;
+  border: 3px solid #545454;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  font-size: 18px;
+  outline: none;
+  width: 100%;
 }
 
 button {
-    width: 50%;
-    border-radius: 25px;
-    padding: 16px 20px;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    background-color: #A34ABA;
-    color: white;
-    margin-left: 25%;
+  cursor: pointer;
+  width: auto;
+  border-radius: 25px;
+  padding: 15px 40px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  background-color: #a34aba;
+  color: white;
+  font-size: 18px;
 }
 
 .error {
   color: red;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #a34aba;
+  font-size: 20px;
 }

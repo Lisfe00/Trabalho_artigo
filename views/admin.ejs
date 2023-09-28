@@ -13,11 +13,12 @@
     <header id="header">
         <img class="image" src="../public/img/compilando_comnhecimento.png" width="15%">
         <div class="as">
+            <a class="link" href="/">Blog</a>
             <a class="link" href="/articles/show/create">Cadastrar artigo</a>
             <a class="link" <% if (authUser == "admin") { %> href="/users/show/create" <% }else { %> href="/users/home"
                 <% } %>>Cadastrar usuário</a>
         </div>
-        <a class="link" href="/users/logout">logout</a>
+        <a class="link" href="/users/logout">Sair</a>
     </header>
     <main id="main">
         <div class="title">
@@ -36,8 +37,8 @@
                 <div class="admin-card-title">
                     <a class="titulo-admin"
                         href="/articles/show/update/<%= dataArticle.kb_id%>"><%= dataArticle.kb_title %></a>
-                    <br>
                     <span class="autor"><%= dataArticle.author_name %></span>
+                    <span class="date">Publicado em <%= dataArticle.kb_published_date %></span>
                 </div>
                 <div class="edit">
                     <a href="/articles/show/update/<%= dataArticle.kb_id%>">
@@ -59,10 +60,10 @@
 
         <div class="artigos_container">
             <% if (Array.isArray(datas)) { %>
-            <% datas.forEach(function(data) { %> <div class="card-users">
+            <% datas.forEach(function(data) { %>
+            <div class="card-articles">
                 <div class="admin-card-title">
                     <a class="titulo-admin" href="/users/show/update/<%= data.author_id%>"><%= data.author_name %></a>
-                    <br>
                     <span class="autor"><%= data.author_email %></span>
                 </div>
 
