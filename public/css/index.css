@@ -241,3 +241,14 @@ main {
   font-weight: 800;
   font-size: 20px;
 }
+
+.edit {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 20px;
+
+  > img {
+    cursor: pointer;
+  }
+}

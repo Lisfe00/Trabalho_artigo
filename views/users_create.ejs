@@ -9,35 +9,6 @@
     <title>Cadastrar usuário</title>
 </head>
 
-<!-- <body>
-    <h1>create users</h1>
-    <form action="/users/create">
-        <label>nome</label>
-        <input type="text" name="name">
-        <label>email</label>
-        <input type="email" name="email">
-        <label>usuário</label>
-        <input type="text" name="user">
-        <label>senha</label>
-        <input type="text" name="password">
-        <label>Tipo de acesso</label>
-        <select name="acess">
-            <option value="admin">Admin</option>
-            <option value="autor">autor</option>
-        </select>
-        <label>Ativo</label>
-        <input type="checkbox" name="status" value="on" checked>
-        <button>ENVIAR</button>
-    </form>
-
-    <a href="/users/home">VOLTAR</a>
-
-    <% if (errormessage) { %>
-    <div><%= errormessage %></div>
-    <% }%>
-
-</body> -->
-
 
 <body class="body">
     <section class="return">
@@ -49,49 +20,55 @@
         </div>
     </section>
     <main>
-        <section style="width: auto;">
-            <h1 class="title">Crie novos <strong>usuários!</strong>
-            </h1>
-        </section>
-        <section class="create-form">
-            <form action="/articles/create" class="form">
-                <div class="item-text">
-                    <label>Qual o título do seu artigo?</label>
-                    <input type="text" name="title">
-                </div>
-                <div class="item-text">
-                    <label>E o seu brilhante subtítulo?</label>
-                    <input type="text" name="permalink">
-                </div>
-                <div class="item-text">
-                    <label>Quais são as Palavras chaves?</label>
-                    <input type="text" name="keywords">
-                    <p>Separe as palavras chaves por vírgula, ok?</p>
-                </div>
-                <div class="item-text">
-                    <label>Escreva aqui o corpo do seu artigo:</label>
-                    <textarea name="body" id="body" cols="30" rows="10" class="textarea-body"></textarea>
-                </div>
-                <section class="options-form">
-                    <div>
-                        <label>Quero publicar</label>
-                        <input type="checkbox" name="published" value="on" checked>
-                    </div>
-                    <div>
-                        <label>Apenas sugerir</label>
-                        <input type="checkbox" name="suggestion" value="on" checked>
-                    </div>
-                    <div>
-                        <label>Destacar</label>
-                        <input type="checkbox" name="featured" value="on" checked>
-                    </div>
-                </section>
-                <footer><button class="submit-button">Cadastrar artigo</button></footer>
-            </form>
-        </section>
 
+        <article>
+            <section style="width: auto;">
+                <h1 class="title">Crie novos <strong>usuários!</strong>
+                </h1>
+            </section>
+            <section class="create-form">
+                <form action="/users/create" class="form">
+                    <div class="item-text">
+                        <label>Qual o nome completo do usuário?</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="item-text">
+                        <label>Qual o e-mail?</label>
+                        <input type="email" name="email">
+                    </div>
+                    <div class="item-text">
+                        <label>Informe o user:</label>
+                        <input type="text" name="user">
+                    </div>
+                    <div class="item-text">
+                        <label>Digite a senha de acesso:</label>
+                        <input type="password" name="password">
+                    </div>
+                    <section class="options-form">
+                        <div>
+                            <label>Esse usuário será</label>
+                            <select name="acess" class="selector">
+                                <option value="admin">Administrador</option>
+                                <option value="autor">Autor</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-div">
+                            <label>Ativo</label>
+                            <input type="checkbox" name="status" value="on" checked>
+                        </div>
+                    </section>
+                    <footer>
+                        <button class="submit-button">Cadastrar usuário</button>
+                    </footer>
+                </form>
+                <div class="warning">
+                    <% if (errormessage) { %>
+                    <div><%= errormessage %></div>
+                    <% }%>
+                </div>
+            </section>
+        </article>
     </main>
-
 </body>
 
 </html>

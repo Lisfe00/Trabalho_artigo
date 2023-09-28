@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/public/img/logo-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/create.css">
     <title>Document</title>
 </head>
 
-<body>
-    <h1>edit users</h1>
+<!-- <body> -->
+<!-- <h1>edit users</h1>
     <form action="/users/update">
         <input type="text" name="id" hidden value="<%= user.author_id %>">
         <label>nome</label>
@@ -28,10 +29,70 @@
         <label>Ativo</label>
         <input type="checkbox" name="status" value="on" <% if (user.author_status == "on") { %> checked <% } %>>
         <button>ENVIAR</button>
-    </form>
+    </form> -->
+<!-- </body> -->
 
-    <a href="/users/home">VOLTAR</a>
+<body class="body">
+    <section class="return">
+        <img class="image" src="/public/img/compilando_comnhecimento.png" width="15%">
+        <div>
+            <a href="/users/home" style="width: auto;">Home</a>
+            <!-- <a class="link" href="/users//show/create">Cadastrar artigo</a> -->
+            <a class="link" href="/users/logout">Sair</a>
+        </div>
+    </section>
+    <main>
 
+        <article>
+            <section style="width: auto;">
+                <h1 class="title">Edite um <strong>usuário!</strong>
+                </h1>
+            </section>
+            <section class="create-form">
+                <form action="/users/update" class="form">
+                    <div class="item-text">
+                        <input type="text" name="id" hidden value="<%= user.author_id %>">
+                        <label>Qual o nome completo do usuário?</label>
+                        <input type="text" name="name" value="<%= user.author_name %>">
+                    </div>
+                    <div class="item-text">
+                        <label>Qual o e-mail?</label>
+                        <input type="email" name="email" value="<%= user.author_email %>">
+                    </div>
+                    <div class="item-text">
+                        <label>Informe o user:</label>
+                        <input type="text" name="user" value="<%= user.author_user %>">
+                    </div>
+                    <div class="item-text">
+                        <label>Digite a senha de acesso:</label>
+                        <input type="password" name="password" value="<%= user.author_pwd %>">
+                    </div>
+                    <section class="options-form">
+                        <div>
+                            <label>Esse usuário será</label>
+                            <select name="acess" class="selector">
+
+                                <option value="admin" <% if (user.author_level == "admin") { %> selected <% } %>>
+                                    Administrador
+                                </option>
+                                <option value="autor" <% if (user.author_level == "autor") { %> selected <% } %>>Autor
+                                </option>
+                            </select>
+                        </div>
+                        <div class="checkbox-div">
+                            <label>Ativo</label>
+                            <input type="checkbox" name="status" value="on" <% if (user.author_status == "on") { %>
+                                checked <% } %>>
+                        </div>
+                    </section>
+                    <footer>
+                        <button class="submit-button">Atualizar usuário</button>
+                    </footer>
+                </form>
+            </section>
+        </article>
+    </main>
 </body>
+
 
 </html>
