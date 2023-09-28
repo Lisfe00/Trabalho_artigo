@@ -21,12 +21,16 @@ const index = (req, res) => {
                 }
             });
         });
+
+        datasArticles = datasArticles.filter((element) => element.kb_published == "on");
+
+        destaques = datasArticles.filter((element) => element.kb_featured == "on");
         
         datasArticles.sort(function(a, b) {
            return b.kb_liked_count - a.kb_liked_count;
           });
 
-        res.render('../views/index', { datasArticles: datasArticles});
+        res.render('../views/index', { datasArticles: datasArticles, destaques: destaques});
     } catch (error) {
         console.error('Erro ao ler o arquivo:', error);
     }
