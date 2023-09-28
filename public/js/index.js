@@ -47,7 +47,7 @@ function garbage(element, id) {
         url: '/articles/delete/'+id,
         type: 'GET',
         success: function(result) {
-            element.parentElement.remove();
+            element.parentElement.parentElement.remove();
         }
     });
 }
@@ -62,7 +62,7 @@ function garbageUsers(element, id) {
         url: '/users/delete/'+id,
         type: 'GET',
         success: function(result) {
-            element.parentElement.remove();
+            element.parentElement.parentElement.remove();
         }
     });
 }
