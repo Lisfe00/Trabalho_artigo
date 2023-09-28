@@ -144,3 +144,48 @@ footer {
   font-weight: 500;
   color: red;
 }
+
+.article-header {
+  width: 100%;
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+
+  .title {
+    font-size: 32px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #545454;
+  }
+}
+
+.subtitle {
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: gray;
+
+  > p {
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+.text-article {
+  width: 100%;
+  height: auto;
+  text-align: justify;
+}
+
+#favorite_button {
+  background: none;
+  border: none;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
