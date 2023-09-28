@@ -126,6 +126,23 @@ function like(req, res){
     res.json(likes);
 }
 
+function view(req, res){
+    const articleId = req.params.id;
+
+    let oldjson = fs.readFileSync(path.join(__dirname, '../data', 'articles.json'), 'utf-8');
+    let jsonDatas = JSON.parse(oldjson)
+
+    let article;
+
+    jsonDatas.forEach((element) => {
+        if(element.kb_id === articleId){
+            article = element;
+        }
+    });
+
+    res.render('../views/articles_view', { article: article });
+}
+
 // addd todas as funções aqui
 module.exports = {
     showCreate,
@@ -133,5 +150,6 @@ module.exports = {
     showUpdate,
     update,
     deleteArticle,
-    like
+    like,
+    view
 }

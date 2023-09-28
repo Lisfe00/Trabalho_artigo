@@ -15,6 +15,7 @@ router.get('/delete/:id', authenticator.isAuthenticated, articleController.delet
 
 router.get('/like/:id', articleController.like);
 
+router.get('/view/:id', articleController.view);
 
 
 module.exports = router;
